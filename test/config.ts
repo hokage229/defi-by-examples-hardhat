@@ -6,10 +6,10 @@ const WBTC = "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599";
 
 const WETH_10 = "0xf4BB2e28688e89fCcE3c0580D37d36A7672E8A9F";
 
-const DAI_WHALE = process.env.DAI_WHALE;
+const DAI_WHALE = "0x075e72a5eDf65F0A5f44699c7654C1a76941Ddc8";
 const USDC_WHALE = process.env.USDC_WHALE;
 const USDT_WHALE = process.env.USDT_WHALE;
-const WETH_WHALE = process.env.WETH_WHALE;
+const WETH_WHALE = "0xE78388b4CE79068e89Bf8aA7f218eF6b9AB0e9d0";
 const WBTC_WHALE = "0xE78388b4CE79068e89Bf8aA7f218eF6b9AB0e9d0";
 
 // compound

@@ -1,33 +1,10 @@
-import { ethers, network } from "hardhat";
+import { ethers } from "hardhat";
 import { Contract, Signer } from "ethers";
-
-const { DAI, WBTC, WBTC_WHALE } = require("./config");
-
-
-const impersonate = async (address: string) => {
-  await network.provider.request({
-    method: "hardhat_impersonateAccount",
-    params: [address]
-  });
-  return ethers.provider.getSigner(address);
-};
+import { reset, impersonate } from "./utils";
+import { DAI, WBTC, WBTC_WHALE } from "./config";
 
 
-const reset = async () => {
-  await network.provider.request({
-    method: "hardhat_reset",
-    params: [
-      {
-        forking: {
-          jsonRpcUrl: process.env.ALCHEMY_API,
-          blockNumber: 14761751
-        }
-      }
-    ]
-  });
-};
-
-describe("TestUniswap", () => {
+describe.skip("TestUniswap", () => {
   const WHALE = WBTC_WHALE;
   const AMOUNT_IN = 100000000;
   const AMOUNT_OUT_MIN = 1;
