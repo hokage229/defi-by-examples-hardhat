@@ -1,4 +1,3 @@
-import { expect } from "chai";
 import { ethers, network } from "hardhat";
 import { Contract, Signer } from "ethers";
 
@@ -55,24 +54,21 @@ describe("TestUniswap", () => {
     testUniswap = await TestUniswap.deploy();
     await testUniswap.deployed();
 
-    // let token_whale_signer = await impersonate(WHALE);
-    // await tokenIn.connect(token_whale_signer)
-    //   .approve(testUniswap.address, AMOUNT_IN, { from: WHALE });
-    //
-    // const allowed = await tokenIn.allowance(WHALE, testUniswap.address);
-    // console.log(`allowed to spend: ${allowed}`);
+    let token_whale_signer = await impersonate(WHALE);
+    await tokenIn.connect(token_whale_signer)
+      .approve(testUniswap.address, AMOUNT_IN, { from: WHALE });
   });
 
   it("should pass", async () => {
+    const allowed = await tokenIn.allowance(WHALE, testUniswap.address);
+    console.log(`allowed to spend: ${allowed}`);
+
+    const balance = await tokenIn.balanceOf(WHALE);
+    console.log(`balance of whale ${balance}`);
+
     let token_whale_signer = await impersonate(WHALE);
-
-    await tokenIn.connect(token_whale_signer)
-      .approve(testUniswap.address, AMOUNT_IN, { from: WHALE });
-
-    // const allowed = await tokenIn.allowance(WHALE, testUniswap.address);
-    // console.log(`allowed to spend: ${allowed}`);
-
-    const tx = await testUniswap.connect(token_whale_signer).swap(
+    // await tokenIn.connect(token_whale_signer).transfer(testUniswap.address, AMOUNT_IN, { from: WHALE });
+    await testUniswap.connect(token_whale_signer).swap(
       tokenIn.address,
       tokenOut.address,
       AMOUNT_IN,
@@ -82,9 +78,9 @@ describe("TestUniswap", () => {
         from: WHALE
       }
     );
-    tx.wait(1);
 
     console.log(`in ${AMOUNT_IN}`);
-    console.log(`out ${await tokenOut.balanceOf(CALLER)}`);
+
+    console.log(`out ${await tokenOut.balanceOf(CALLER.getAddress())}`);
   });
 });

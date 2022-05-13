@@ -10,7 +10,7 @@ const DAI_WHALE = process.env.DAI_WHALE;
 const USDC_WHALE = process.env.USDC_WHALE;
 const USDT_WHALE = process.env.USDT_WHALE;
 const WETH_WHALE = process.env.WETH_WHALE;
-const WBTC_WHALE = "0x075e72a5eDf65F0A5f44699c7654C1a76941Ddc8";
+const WBTC_WHALE = "0xE78388b4CE79068e89Bf8aA7f218eF6b9AB0e9d0";
 
 // compound
 const CDAI = "0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643";
