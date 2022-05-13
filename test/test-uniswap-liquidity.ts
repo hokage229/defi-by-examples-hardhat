@@ -3,7 +3,7 @@ import { Contract, Signer } from "ethers";
 import { reset, impersonate } from "./utils";
 import { WETH, DAI, WETH_WHALE, DAI_WHALE } from "./config";
 
-describe("TestUniswapLiquidity", () => {
+describe.skip("TestUniswapLiquidity", () => {
   let CALLER: Signer;
   const TOKEN_A = WETH;
   const TOKEN_A_WHALE = WETH_WHALE;
