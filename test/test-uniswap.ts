@@ -61,10 +61,12 @@ describe("TestUniswap", () => {
 
   it("should pass", async () => {
     const allowed = await tokenIn.allowance(WHALE, testUniswap.address);
-    console.log(`allowed to spend: ${allowed}`);
+    console.log(`tokenIn allowed to spend (to uniswap): ${allowed}`);
 
     const balance = await tokenIn.balanceOf(WHALE);
-    console.log(`balance of whale ${balance}`);
+    console.log(`tokenIn balance of whale ${balance}`);
+
+    console.log(`tokenOut balance before swap ${await tokenOut.balanceOf(CALLER.getAddress())}`);
 
     let token_whale_signer = await impersonate(WHALE);
     // await tokenIn.connect(token_whale_signer).transfer(testUniswap.address, AMOUNT_IN, { from: WHALE });
@@ -79,8 +81,6 @@ describe("TestUniswap", () => {
       }
     );
 
-    console.log(`in ${AMOUNT_IN}`);
-
-    console.log(`out ${await tokenOut.balanceOf(CALLER.getAddress())}`);
+    console.log(`tokenOut balance after swap ${await tokenOut.balanceOf(CALLER.getAddress())}`);
   });
 });
