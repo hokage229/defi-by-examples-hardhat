@@ -3,7 +3,7 @@ import { Contract} from "ethers";
 import { reset, impersonate } from "./utils";
 import { WETH, DAI, DAI_WHALE} from "./config";
 
-describe("TestUniswapOptimal", () => {
+describe.skip("TestUniswapOptimal", () => {
   const WHALE = DAI_WHALE;
   const AMOUNT = ethers.utils.parseEther("1000");
 
