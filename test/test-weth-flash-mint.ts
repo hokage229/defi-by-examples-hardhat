@@ -1,8 +1,8 @@
 import { ethers } from "hardhat";
-import { Contract} from "ethers";
+import { Contract } from "ethers";
 import { WETH_10 } from "./config";
 
-describe("TestWethFlashMint", () => {
+describe.skip("TestWethFlashMint", () => {
   let testWethFlashMint: Contract;
   let weth: Contract;
 
