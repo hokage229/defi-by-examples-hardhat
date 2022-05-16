@@ -4,7 +4,7 @@ import { reset, impersonate } from "./utils";
 import { USDC, USDC_WHALE } from "./config";
 import { assert } from "chai";
 
-describe("TestAaveFlashLoan", () => {
+describe.skip("TestAaveFlashLoan", () => {
   const WHALE = USDC_WHALE;
   const TOKEN_BORROW = USDC;
   const DECIMALS = 6;
