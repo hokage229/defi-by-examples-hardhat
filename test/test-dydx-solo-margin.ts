@@ -7,7 +7,7 @@ import { assert } from "chai";
 
 const SOLO = "0x1E0447b19BB6EcFdAe1e4AE1694b0C3659614e4e";
 
-describe("TestDyDxSoloMargin", async () => {
+describe.skip("TestDyDxSoloMargin", async () => {
   const WHALE = USDC_WHALE;
   const TOKEN = USDC;
   const DECIMALS = 6;

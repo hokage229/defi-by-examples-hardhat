@@ -56,7 +56,7 @@ contract TestDyDxSoloMargin is ICallee, DydxFlashloanBase {
         flashUser = sender;
 
         emit Log("balance", bal);
-        emit Log("repayAmount", repayAmount);
-        emit Log("balance - repayAmount", bal - repayAmount);
+        emit Log("repay", repayAmount);
+        emit Log("balance - repayAmount", bal -repayAmount);
     }
 }
