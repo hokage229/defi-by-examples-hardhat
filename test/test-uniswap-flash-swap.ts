@@ -5,7 +5,7 @@ import { USDC, USDC_WHALE } from "./config";
 import { assert } from "chai";
 
 
-describe("TestUniswapFlashSwap", async () => {
+describe.skip("TestUniswapFlashSwap", async () => {
   const WHALE = USDC_WHALE;
   const TOKEN_BORROW = USDC;
   const DECIMALS = 6;
